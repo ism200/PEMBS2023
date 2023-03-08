@@ -1,0 +1,33 @@
+input:
+  - ["1", 1]
+  - ["0", 0]
+  - {vary: false}
+
+irf:
+  - ["center", ?]
+  - ["width", ?]
+  - ["backsweep", 13800.0, {vary: false}]
+  - ["dispc", 690.0, {vary: false}]
+  - ["disp1", -0.68]
+  - ["disp2", .71]
+
+kinetic:
+  - [4, {vary: false}]
+  - [?, {vary: true}]
+  - ?
+  - ?
+  - ?
+  - ?
+  - ["7", {expr: '$kinetic.4 * $scaling.1'}]
+  - ["8", {expr: '$kinetic.5 * $scaling.2'}]
+
+
+scaling:
+#   - 1.87
+#   - 1.37
+  - 1.5
+  - 1
+
+
+area:
+  - ['1', 1, {"vary": False}]

@@ -1,0 +1,28 @@
+input:
+  - ["1", 1]
+  - ["0", 0]
+  - {vary: false}
+
+irf:
+  - ["center", ?]
+  - ["width", ?]
+
+rates:
+  - ["k1",?]
+  - ["k2",?]
+  - ["k3",{expr: '$rates.k2 / $scaling.2'}]
+  - ["k4",?]
+  - ["k5",?, {vary: false}]
+  - ["k6",?, {vary: false}]
+  - ["k7",{expr: '$rates.k1 * $scaling.1'}]
+  - ["k8",{expr: '$rates.k2'}]
+  - ["k9",?, {vary: false}]
+  - ["k10",{expr: '$rates.k11 * $scaling.2'}]
+  - ["k11",?]
+
+rel:
+  - ['r1', 1, {"vary": False}]
+
+scaling:
+  - [0.271, {vary: false}]
+  - [3, {vary: false}]
