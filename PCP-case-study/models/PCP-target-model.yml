@@ -48,7 +48,7 @@ k_matrix:
 
 irf:
   irf1:
-    type: spectral-multi-gaussian
+    type: multi-gaussian
     center: [irf.center]
     width: [irf.width]
 
