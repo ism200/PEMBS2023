@@ -2,13 +2,18 @@ default_megacomplex: decay
 
 dataset_groups:
   default:
-    residual_function: non_negative_least_squares
+# decide which residual_function to use
+# uncomment (by pressing the keys Ctrl / ) only one of these two lines
+#     residual_function: non_negative_least_squares
+#     residual_function: variable_projection
 
 dataset:
   CK_data:
     initial_concentration: input1
     megacomplex: [mc1]
-    irf: irf1
+# decide whether or not to use an irf
+# uncomment (by pressing the keys Ctrl / ) to use an irf
+#     irf: irf1
 
 initial_concentration:
   input1:
@@ -52,13 +57,38 @@ irf:
     backsweep_period: irf.backsweep
 
 
-clp_relations:
-  - source: s1
-    target: s2
-    parameter: rel.r1
-    interval: [[0, 1000]]
-  - source: s1
-    target: s3
-    parameter: rel.r1
-    interval: [[0, 1000]]
-
+# decide whether or not to use clp_relations
+# uncomment (by pressing the keys Ctrl / ) to use clp_relations
+# add the names of the compartments
+# add the name of the parameter
+# fill the wavelength interval
+# clp_relations:
+#   - source: s1
+#     target: s2
+# in this example the spectrum of compartment s2 is equal to rel.r1 times the spectrum of compartment s1
+#     parameter: rel.r1
+#     interval: [[0, 1000]]
+#   - source: 
+#     target: 
+#     parameter: 
+#     interval: [[ , ]]
+#
+# decide whether or not to use clp_constraints
+# uncomment (by pressing the keys Ctrl / ) to use clp_constraints
+# add the name of the compartment
+# fill the wavelength interval
+# clp_constraints:
+#   - type: zero
+#     target: s1
+# in this example the spectrum of compartment s1 is equal to zero from 1-1000 nm
+#     interval:
+#       - [1, 1000]
+#
+# decide whether or not to use weights
+# uncomment (by pressing the keys Ctrl / ) to use weights
+# add the name(s) of the dataset(s)
+# fill the wavelength interval (global_interval) and the value of the weight
+# weights:
+#     datasets: [dataset1]
+#     global_interval: [750, 1000]
+#     value: 0.3
