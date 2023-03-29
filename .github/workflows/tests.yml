@@ -43,6 +43,7 @@ jobs:
           # looking for the notebook names to skip
           block_list =[
               "CK-case-study",
+              "sim-case-study",
               "PCP-case-study-pretty",
               "PS1_pyglotaran_equalarea",
           ]

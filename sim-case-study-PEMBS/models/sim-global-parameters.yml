@@ -1,0 +1,20 @@
+input:
+  - ["1", 1]
+  - ["0", 0]
+  - {vary: false}
+
+irf:
+  # - ["center",? ]
+  # - ["width", ?]
+
+rates:
+  - ["k21",?]
+  - ["k32",?]
+  - ["k43",?]
+  - ["k54",?]
+  - ["k55",?]
+
+rel:
+  - ['r1', 0.5]
+  - ['r2', 0.2]
+  - {"vary": True,"non-negative": True}
