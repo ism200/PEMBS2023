@@ -46,6 +46,9 @@ jobs:
               "sim-case-study",
               "PCP-case-study-pretty",
               "PS1_pyglotaran_equalarea",
+              "BRC_NIR-global-case-study-pretty",
+              "BRC_VIS-global-case-study-pretty",
+              "BRC_VIS_NIR-target-case-study-pretty",
           ]
 
           notebook_paths = []
