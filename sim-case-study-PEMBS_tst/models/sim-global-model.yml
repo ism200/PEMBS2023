@@ -1,0 +1,71 @@
+default_megacomplex: decay
+
+dataset_groups:
+  default:
+# decide which residual_function to use
+# uncomment (by pressing the keys Ctrl / ) only one of these two lines
+#     residual_function: non_negative_least_squares
+#     residual_function: variable_projection
+
+dataset:
+  sim_data:
+    initial_concentration: input1
+    megacomplex: [mc1]
+# decide whether or not to use an irf
+# uncomment (by pressing the keys Ctrl / ) to use an irf
+#     irf: irf1
+
+initial_concentration:
+  input1:
+    compartments: [s1, s2, s3, s4, s5]
+    parameters: [
+      input.1,
+      input.0,
+      input.0,
+      input.0,
+      input.0
+      ]
+
+megacomplex:
+  mc1:
+    k_matrix: [km1]
+
+k_matrix:
+  km1:
+    matrix:
+      (s2, s1): rates.k21
+      (s3, s2): rates.k32
+      (s4, s3): rates.k43
+      (s5, s4): rates.k54
+      (s5, s5): rates.k55
+
+# uncomment (by pressing the keys Ctrl / ) to define the irf
+# irf:
+#   irf1:
+#     type: gaussian
+#     center: [irf.center]
+#     width: [irf.width]
+
+# decide whether or not to use clp_relations
+# uncomment (by pressing the keys Ctrl / ) to use clp_relations
+# add the names of the compartments
+# fill the wavelength interval
+# clp_relations:
+#   - source: 
+#     target: 
+#     parameter: rel.r1
+#     interval: [[0, 1000]]
+#   - source: 
+#     target: 
+#     parameter: rel.r2
+#     interval: [[0, 1000]]
+# decide whether or not to use clp_constraints
+# uncomment (by pressing the keys Ctrl / ) to use clp_constraints
+# add the name of the compartment
+# fill the wavelength interval
+# in this example the spectrum of compartment s1 is equal to zero from 1-1000 nm
+# clp_constraints:
+#   - type: zero
+#     target: 
+#     interval:
+#       - [1, 1000]
