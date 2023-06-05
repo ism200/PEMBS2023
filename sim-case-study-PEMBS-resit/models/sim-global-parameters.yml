@@ -6,6 +6,7 @@ input:
 irf:
   # - ["center",? ]
   # - ["width", ?]
+  # - {"vary": True,"minimum": 0}
 
 rates:
   - ["k21",?]
@@ -13,8 +14,9 @@ rates:
   - ["k43",?]
   - ["k54",?]
   - ["k55",?]
+  - {"vary": True,"minimum": 0}
 
 rel:
-  - ['r1', 0.5]
-  - ['r2', 0.2]
-  - {"vary": True,"non-negative": True}
+#   - ['r1', ?]
+#   - ['r2', ?]
+#   - {"vary": True,"minimum": 0}

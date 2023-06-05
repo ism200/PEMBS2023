@@ -43,8 +43,8 @@ k_matrix:
 # irf:
 #   irf1:
 #     type: gaussian
-#     center: [irf.center]
-#     width: [irf.width]
+#     center: irf.center
+#     width: irf.width
 
 # decide whether or not to use clp_relations
 # uncomment (by pressing the keys Ctrl / ) to use clp_relations
