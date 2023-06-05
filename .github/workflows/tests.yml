@@ -44,6 +44,7 @@ jobs:
           block_list =[
               "CK-case-study",
               "sim-case-study",
+              "sim-case-study-resit",
               "PCP-case-study-pretty",
               "PS1_pyglotaran_equalarea",
               "BRC_NIR-global-case-study-pretty",
